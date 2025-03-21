@@ -1,4 +1,4 @@
-import { db } from "@/service/firebaseConfig";
+import { db } from "../service/FirebaseConfig";
 import React, { useEffect, useState } from "react";
 import {
   collection,
@@ -16,8 +16,8 @@ import {
   DialogFooter,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Button } from "../components/ui/button";
+import { Link } from "react-router-dom"; 
 
 function MyTrips() {
   const [userTrips, setUserTrips] = useState([]);

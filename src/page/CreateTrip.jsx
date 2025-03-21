@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "../components/ui/input";
 import { useEffect, useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,14 +17,14 @@ import {
   SelectBudgetOptions,
   SelectTravelList,
 } from "../constant/option";
-import { Button } from "@/components/ui/button";
-import { chatSession } from "@/service/AIModel";
+import { Button } from "../components/ui/button";
+import { chatSession } from "../service/AIModel";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/service/FirebaseConfig";
+import { db } from "../service/FirebaseConfig";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext"; // Import useAuth
+import { useAuth } from "../context/AuthContext"; 
 
 const DestinationSearch = () => {
   const [query, setQuery] = useState("");
@@ -40,7 +40,7 @@ const DestinationSearch = () => {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
   const suggestionsRef = useRef(null);
   const navigate = useNavigate();
-  const { user, login } = useAuth(); // Use useAuth for user and login
+  const { user, login } = useAuth(); 
 
   const handleInputChange = (name, value) => {
     setFromData({
@@ -225,7 +225,7 @@ const DestinationSearch = () => {
             <h2 className="font-bold text-3xl ">
               Tell us your travel preferences 🌍✈️🌴
             </h2>
-            <p className="mt-3 md:text-md  text-gray-600 text-md">
+            <p className="mt-3 md:text-lg  text-gray-600 text-md">
               Just provide some basic information, and our trip planner will
               generate a customized itinerary based on your preferences.
             </p>
@@ -267,7 +267,7 @@ const DestinationSearch = () => {
         </div>
 
         <div className="px-5 mt-12 sm:px-10 md:px-32 lg:px-56 xl:px-72">
-          <label className="text-xl font-medium">
+          <label className="text-xl font-semibold">
             How many days are you planning your trip?
           </label>
           <Input
@@ -279,13 +279,13 @@ const DestinationSearch = () => {
         </div>
 
         <div className="px-5 mt-12 sm:px-10 md:px-32 lg:px-56 xl:px-72">
-          <label className="text-xl my-3 font-medium">
+          <label className="text-xl my-3 font-semibold">
             What is Your Budget?
           </label>
           <p>
             The budget is exclusively allocated for activities and dining
             purposes.{" "}
-          </p>
+          </p >
           <div className="grid grid-cols-3 gap-5 mt-5 mb-5">
             {SelectBudgetOptions.map((item, index) => (
               <div
@@ -307,7 +307,7 @@ const DestinationSearch = () => {
         </div>
 
         <div className="px-5 mt-12 sm:px-10 md:px-32 lg:px-56 xl:px-72">
-          <label className="text-xl my-3 font-medium">
+          <label className="text-xl my-3 font-semibold">
             Who do you plan on traveling with on your next adventure?{" "}
           </label>
           <div className="grid grid-cols-3 gap-5 mt-5 mb-5">
