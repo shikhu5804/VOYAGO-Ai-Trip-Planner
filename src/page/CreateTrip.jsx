@@ -355,16 +355,13 @@ const DestinationSearch = () => {
         >
           <DialogContent>
             <DialogHeader>
-              {/* Move the img and h2 outside of DialogDescription */}
               <img className="w-[20vh]" src="/logoo.png" alt="Logo" />
               <h2 className="font-bold text-lg mt-6">Sign In with Google</h2>
-              {/* Only include text content inside DialogDescription */}
               <DialogDescription>
                 Sign In to the App with Google authentication securely
               </DialogDescription>
-              {/* Move the Button outside of DialogDescription */}
               <Button
-                onClick={googleLogin}
+                onClick={login}
                 className="w-full mt-5 flex gap-4 items-center"
               >
                 <FcGoogle className="h-7 w-7" />
