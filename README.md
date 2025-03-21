@@ -32,10 +32,10 @@ Voyago is an AI-powered trip planning application that helps users create person
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-- Google Cloud Platform account
-- Firebase account
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or yarn
+- [Google Cloud Platform account](https://console.cloud.google.com/)
+- [Firebase account](https://firebase.google.com/)
 
 ### Environment Variables
 Create a `.env` file in the root directory with the following:
@@ -81,7 +81,7 @@ npm run build
 Contributions, issues, and feature requests are welcome! Feel free to check issues page.
 
 ## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the LICENSE file for details.
 
 ## 👤 Author
 **Shikhar**
@@ -90,6 +90,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Designed the responsive UI/UX
 
 ## 🙏 Acknowledgments
-- Google Gemini AI for powering the trip planning algorithm
-- Shadcn UI for beautiful component library
-- Vercel for hosting
+- [Google Gemini AI](https://gemini.google.com/app) for powering the trip planning algorithm
+- [Shadcn UI](https://ui.shadcn.com/) for beautiful component library
+- [Vercel](https://vercel.com/) for hosting
