@@ -19,7 +19,7 @@ import {
 } from "../constant/option";
 import { Button } from "../components/ui/button";
 import { chatSession } from "../service/AIModel";
-import { useGoogleLogin } from "@react-oauth/google";
+import { GoogleLogin, useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../service/FirebaseConfig";
@@ -196,13 +196,17 @@ const DestinationSearch = () => {
           },
         }
       );
-
+  
       const userData = response.data;
       localStorage.setItem("user", JSON.stringify(userData)); // Store user in localStorage
       await login(userData); // Update user state in context
-
+  
       setOpenDialog(false);
-      onGenerateTrip();
+  
+      // Check if the user was trying to generate a trip before logging in
+      if (formData?.location && formData?.totalDays && formData?.budget && formData?.people) {
+        onGenerateTrip();
+      }
     } catch (error) {
       console.error("Error fetching user profile:", error);
       toast.error("Failed to sign in. Please try again.");
@@ -360,7 +364,7 @@ const DestinationSearch = () => {
               </DialogDescription>
               {/* Move the Button outside of DialogDescription */}
               <Button
-                onClick={login}
+                onClick={googleLogin}
                 className="w-full mt-5 flex gap-4 items-center"
               >
                 <FcGoogle className="h-7 w-7" />
